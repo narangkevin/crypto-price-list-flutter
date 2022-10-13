@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'price_screen.dart';
 
@@ -9,6 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(primaryColor: Colors.lightBlue),
       // scaffoldBackgroundColor: Colors.white),
+      // ignore: prefer_const_constructors
       home: PriceScreen(),
     );
   }

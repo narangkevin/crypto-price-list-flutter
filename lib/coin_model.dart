@@ -15,9 +15,15 @@ class CoinModel {
   num changePercentage;
 
   factory CoinModel.fromJson(Map<String, dynamic> json) {
-
-    return CoinModel(name: json['name'], symbol: json['symbol'], imageUrl: json['image'], price: json['current_price'], change: json['price_change_24h'], changePercentage: json['price_change_percentage_24h']);
+    return CoinModel(
+        name: json['name'],
+        symbol: json['symbol'],
+        imageUrl: json['image'],
+        price: json['current_price'],
+        change: json['price_change_24h'],
+        changePercentage: json['price_change_percentage_24h']);
   }
 }
 
+// Independent List of typr CoinModel. Can be used when creating an object in another class globally!
 List<CoinModel> coinList = [];

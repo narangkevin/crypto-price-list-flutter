@@ -9,11 +9,14 @@ import 'coin_model.dart';
 import 'dart:convert';
 
 class PriceScreen extends StatefulWidget {
+  const PriceScreen({Key? key}) : super(key: key);
+
   @override
   State<PriceScreen> createState() => _PriceScreenState();
 }
 
 class _PriceScreenState extends State<PriceScreen> {
+  // fetchCoin() function that returns value in the Future
   Future<List<CoinModel>> fetchCoin() async {
     coinList = [];
     final response = await http.get(Uri.parse(
@@ -43,7 +46,7 @@ class _PriceScreenState extends State<PriceScreen> {
   @override
   void initState() {
     fetchCoin();
-    Timer.periodic(Duration(seconds: 10), (timer) => fetchCoin());
+    Timer.periodic(const Duration(seconds: 10), (timer) => fetchCoin());
     super.initState();
   }
 
@@ -51,7 +54,7 @@ class _PriceScreenState extends State<PriceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CRYPTO TICKER 🤑'),
+        title: const Text('CRYPTO TICKER 🤑'),
       ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CoinCard extends StatelessWidget {
-  CoinCard(
-      {required this.name,
-        required this.symbol,
-        required this.imageUrl,
-        required this.price,
-        required this.change,
-        required this.changePercentage});
+  CoinCard({Key? key,
+    required this.name,
+    required this.symbol,
+    required this.imageUrl,
+    required this.price,
+    required this.change,
+    required this.changePercentage,
+  }) : super(key: key);
 
   String name;
   String symbol;
@@ -25,16 +27,16 @@ class CoinCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.grey[900],
           borderRadius: BorderRadius.circular(15.0),
-          boxShadow: [
-            const BoxShadow(
-              color: const Color.fromARGB(255, 41, 39, 39),
-              offset: const Offset(4, 4),
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromARGB(255, 41, 39, 39),
+              offset: Offset(4, 4),
               blurRadius: 10,
               spreadRadius: 1,
             ),
-            const BoxShadow(
+            BoxShadow(
               color: Color.fromARGB(255, 41, 39, 39),
-              offset: const Offset(-4, -4),
+              offset: Offset(-4, -4),
               blurRadius: 10,
               spreadRadius: 1,
             ),
@@ -48,14 +50,14 @@ class CoinCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.grey[900],
                   borderRadius: BorderRadius.circular(15.0),
-                  boxShadow: [
-                    const BoxShadow(
-                      color: const Color.fromARGB(255, 41, 39, 39),
-                      offset: const Offset(4, 4),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 41, 39, 39),
+                      offset: Offset(4, 4),
                       blurRadius: 10,
                       spreadRadius: 1,
                     ),
-                    const BoxShadow(
+                    BoxShadow(
                       color: Color.fromARGB(255, 41, 39, 39),
                       offset: Offset(-4, -4),
                       blurRadius: 10,
@@ -67,8 +69,7 @@ class CoinCard extends StatelessWidget {
                 width: 60,
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Image.network(
-                      imageUrl),
+                  child: Image.network(imageUrl),
                 ),
               ),
             ),
@@ -108,7 +109,9 @@ class CoinCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    change.toDouble() < 0 ? change.toDouble().toStringAsFixed(2) : '+${change.toDouble().toStringAsFixed(2)}',
+                    change.toDouble() < 0
+                        ? change.toDouble().toStringAsFixed(2)
+                        : '+${change.toDouble().toStringAsFixed(2)}',
                     style: TextStyle(
                       color: change.toDouble() < 0 ? Colors.red : Colors.green,
                       fontSize: 18,
@@ -116,9 +119,13 @@ class CoinCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    changePercentage.toDouble() < 0 ? '${changePercentage.toDouble().toStringAsFixed(2)}%' : '+${changePercentage.toDouble().toStringAsFixed(2)}%',
+                    changePercentage.toDouble() < 0
+                        ? '${changePercentage.toDouble().toStringAsFixed(2)}%'
+                        : '+${changePercentage.toDouble().toStringAsFixed(2)}%',
                     style: TextStyle(
-                      color: changePercentage.toDouble() < 0 ? Colors.red : Colors.green,
+                      color: changePercentage.toDouble() < 0
+                          ? Colors.red
+                          : Colors.green,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
