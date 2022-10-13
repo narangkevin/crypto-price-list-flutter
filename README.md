@@ -1,16 +1,5 @@
-# crypto_ticker
+# Crypto Ticker
 
-A new Flutter project.
+A Flutter project that lists the current price of coins listed in CoinGecko cryptocurrency market. Each card shows the price, 24hr price change, 24hr price change percentage, image of the token, symbol and name of the token. The app refreshes automatically every 10 seconds to GET the latest and updated price of the tokens. This project uses the concept of getting web data using REST API. The data is provided by the open and free API by Coin Gecko.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-- Feel free to clone/download the project for your own use.
